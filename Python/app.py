@@ -124,7 +124,7 @@ def alternar_estado_restaurante():
 
 
 def opcao_invalida():
-    """Função para mostrar opção invalida e voltar para o menu."""
+    """Função para mostrar opção invalida e voltar para o menu.."""
     print('Opção inválida\n')
     voltar()
 
