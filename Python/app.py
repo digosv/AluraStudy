@@ -8,10 +8,16 @@ restaurantes = [{'nome':'Bigoboo', 'categoria':'Japones', "ativo":True},
                 {'nome':'Subway', 'categoria':'Lanche', "ativo":True}]
 
 def voltar():
+    """
+    Função para Voltar para o menu
+    """
     input('Digite uma tecla para voltar para o menu principal...')
     main()
 
 def inicio_programa(text):
+    """
+    Função para limpar e apresentar o incio do titulo executado
+     """
     os.system('cls')
     linha = '*' * (len(text))
     print(linha)
@@ -20,6 +26,8 @@ def inicio_programa(text):
 
 
 def exibir_nome_do_programa():
+
+    """Exibe o nome do programa"""
     print("""
     ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
     ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
@@ -30,12 +38,19 @@ def exibir_nome_do_programa():
     """)
 
 def exibir_opcoes():
+    """
+    Exibe as opções da ferramenta
+    """
     print('1. Cadastrar restaurante')
     print('2. Listar restaurante')
     print('3. Alternar Estado Restaurantes')
     print('4. Sair\n')
 
 def escolher_opcao():
+
+    """
+    Função para escolher opção de atividade
+    """
     
     try:
         opcao_escolhida = input('Escolha uma opção: ')
@@ -56,10 +71,13 @@ def escolher_opcao():
         opcao_invalida()
 
 def finalizar_app():
+    """ Encerra o programa """
     inicio_programa('Encerrando Programa')
 
 
 def cadastrar_restaurante():
+
+    """ Função para cadastro de Novos restaurantes"""
     inicio_programa('Cadastro de Novos Restaurantes')
     
     nome_do_restaurante = input('Digite o restaurante que deseja cadastrar: ')
@@ -75,6 +93,8 @@ def cadastrar_restaurante():
 
 def listar_restaurantes():
 
+    """ Função para mostrar todos restaurantes da lista."""
+
     inicio_programa('Listando Restaurantes')
     print(f'{'Nome do Restaurante'.ljust(20)} | {'Categoria'.ljust(20)} | {'Status'}')
     for restaurante in restaurantes:
@@ -85,13 +105,8 @@ def listar_restaurantes():
     
     voltar()
 
-def ativar_restaurantes():
-    inicio_programa('Ativar Restaurante.')
-
-    input('Digite o nome do seu restaurante: ')
-    voltar()
-
 def alternar_estado_restaurante():
+    """ Função para alternar o estado de status do restaurante"""
     inicio_programa('Alternando Estado do Restaurante')
     nome_restaurante = input('Digite o nome do restaurante que deseja alternar o estado: ')
     restaurante_encontrado = False
@@ -109,10 +124,12 @@ def alternar_estado_restaurante():
 
 
 def opcao_invalida():
+    """Função para mostrar opção invalida e voltar para o menu."""
     print('Opção inválida\n')
     voltar()
 
 def main():
+    """Função Main para iniciar o programa."""
     os.system('cls')
     exibir_nome_do_programa()
     exibir_opcoes()
